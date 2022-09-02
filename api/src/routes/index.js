@@ -32,6 +32,13 @@ const getDb = async () => {
   })
 }
 
+const getAll = async() =>{
+  const apiInfo = getApi();
+  const dbInfo = getDb();
+  const allInfo = apiInfo.concat(dbInfo);
+  return allInfo
+}
+
 
 
 // Configurar los routers
