@@ -1,9 +1,27 @@
 const { Router } = require('express');
+const axios = require('axios');
+const { Character, Occupation } = require('../db.js');
 // Importar todos los routers;
-// Ejemplo: const authRouter = require('./auth.js');
-
-
 const router = Router();
+
+const getApi = async() =>{
+  const {data } = await axios.get('https://breakingbadapi.com/api/characters')
+  const info = await data.map( e =>{
+    return {
+      id: e.char_id,
+      name:e.name,
+      nickName: e.nickName,
+      birthday: e.birthday,
+      image:e.img,
+      status:e.status,
+      occupation:e.occupation.map(e => e)
+    }
+    
+  });
+  return info
+}
+
+
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
