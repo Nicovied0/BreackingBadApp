@@ -106,4 +106,15 @@ router.post('/character', async (req, res) => {
   return res.status(200).send('Personaje creado con exito')
 });
 
+router.get('/characters/:id', async(req,res) =>{
+  const id = req.params.id;
+  const characterTotal = await getAll();
+  if(id){
+    let characterId = await characterTotal.filter(e => e.id == id)
+    characterId.length ?
+    res.status(200).send(characterId) :
+    res.status(404).send('No se econtro character por id')
+  }
+})
+
 module.exports = router;
