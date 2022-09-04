@@ -57,8 +57,20 @@ router.get('/characters', async(req, res) => {
 
 
 
-router.get('/occupations',async (req,res) =>{
-  
+router.get('/occupations', async (req, res) => {
+  const {data} = await axios.get('https://breakingbadapi.com/api/characters')
+  const occupations = data.map(i => i.occupation)
+  const dbOccupation = occupations.flat()
+  dbOccupation.forEach(i => {
+      Occupation.findOrCreate({
+          where: {
+              name: i
+          }
+      })
+  })
+  const allOccupations = await Occupation.findAll();
+  return res.status(200).send(allOccupations)
 })
+
 
 module.exports = router;
