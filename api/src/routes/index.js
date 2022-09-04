@@ -46,7 +46,7 @@ router.get('/characters', async(req, res) => {
   const {name} = req.query;
   const allCharacters = await getAll();
   if(name) {
-      const byName = await allCharacters.filter(i => i.name.toLowerCase().includes(name.toLocaleLowerCase()))
+      const byName = await allCharacters.filter(i => i.name.toLowerCase().includes(name.toLowerCase()))
       byName.length ? 
       res.status(200).send(byName) :
       res.status(404).send("No hay personaje con ese nombre");
@@ -54,5 +54,11 @@ router.get('/characters', async(req, res) => {
       res.status(200).send(allCharacters)
   };
 });
+
+
+
+router.get('/occupations',async (req,res) =>{
+  
+})
 
 module.exports = router;
