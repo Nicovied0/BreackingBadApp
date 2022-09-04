@@ -76,4 +76,34 @@ router.get('/occupations', async (req, res) => {
   res.send(allOcupations)
 })
 
+
+router.post('/character', async (req, res) => {
+  let {
+    name,
+    nickName,
+    birthday,
+    image,
+    status,
+    createdInDb,
+    occupation
+  } = req.body
+
+  const createdCharacter = await Character.create({
+    name,
+    nickName,
+    birthday,
+    image,
+    status,
+    createdInDb
+  })
+
+  const createdDb = await Occupation.findAll({
+    where: {
+      name: occupation
+    }
+  })
+  createdCharacter.addOccupation(createdDb)
+  return res.status(200).send('Personaje creado con exito')
+});
+
 module.exports = router;
