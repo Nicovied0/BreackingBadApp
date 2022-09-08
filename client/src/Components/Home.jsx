@@ -6,8 +6,8 @@ import Card from './Card';
 
 const Home = () => {
 
-  // const dispatch = useDispatch();
-  // const allCharacters = useSelector((e) => e.characters);
+  const dispatch = useDispatch();
+  const allCharacters = useSelector((e) => e.characters);
   // const [currentPage, setCurrentPage] = useState(1)
   // const [charactersPerPage, setCharactersPerPage] = useState(6)
   // const [order, setOrder] = useState('')
@@ -20,9 +20,9 @@ const Home = () => {
   //     setCurrentPage(pageNumber);
   // };
 
-  // useEffect(() => {
-  //     dispatch(getCharacters());
-  // },[dispatch])
+  useEffect(() => {
+      dispatch(getCharacters());
+  },[dispatch])
 
   // function handleClick(e) {
   //     e.preventDefault();
