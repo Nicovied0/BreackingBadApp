@@ -1,8 +1,10 @@
-import { CHARACTERS } from "./actions"
+import { CHARACTERS } from "./actions";
+import { OCCUPATION } from "./actions";
 
 
 const initialState = {
   characters: [],
+  occupations: []
 };
 
 function rootReducer(state = initialState, action) {
