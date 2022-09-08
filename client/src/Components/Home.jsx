@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import{allPagCharacters} from '../redux/actions'
+import {  useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import{getCharacters} from '../redux/actions'
 
 import Card from './Card';
 
@@ -8,6 +10,8 @@ const Home = () => {
 
   const dispatch = useDispatch();
   const allCharacters = useSelector((e) => e.characters);
+
+
   // const [currentPage, setCurrentPage] = useState(1)
   // const [charactersPerPage, setCharactersPerPage] = useState(6)
   // const [order, setOrder] = useState('')
@@ -80,7 +84,7 @@ const Home = () => {
                 </div>
                 </div> */}
                 {
-                allPagCharacters?.map((i) => {
+                allCharacters?.map((i) => {
                     return (
                         <div>
                             <Link to={'/details/' + i.id}>
