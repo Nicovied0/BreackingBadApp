@@ -19,11 +19,11 @@ export function getCharacters() {
   };
 };
 export function getOccupations() {
-  return async function(dispatch) {
-      const res = await axios.get('localhost:3001/occupations')
-      return dispatch({
-          type: OCCUPATION,
-          payload: res.data
-      });
-  };
+    return async function(dispatch) {
+        const res = await axios.get('http://localhost:3001/occupations')
+        return dispatch({
+            type: OCCUPATION,
+            payload: res.data
+        });
+    };
 };
