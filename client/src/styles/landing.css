@@ -1,13 +1,39 @@
-.LandingPage{
-  height: 100vh;
-  /* width: 100vh; 
-  height: 100vh; */
-}
-.backLanding{
-  color:#fff;
-  background-image: url('../asssets/3123.gif');
-  background-size:cover;
+.backLanding {
+  color: #fff;
+  background-image: url("../asssets/3123.gif");
+  background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
   max-width: 100%;
+}
+
+.LandingPage {
+  display: flex;
+  position: relative;
+  top: 8rem;
+  flex-direction: column;
+}
+
+.btnLanding {
+  cursor: pointer;
+  outline: 0;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  background-color: transparent;
+  border: 3px solid transparent;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: #fff;
+  border-color: #0D3E10;
+  
+}
+.btnLanding:hover{
+  color: #fff;
+  background-color: #093009;
+  border-color: #0D3E10;
 }
