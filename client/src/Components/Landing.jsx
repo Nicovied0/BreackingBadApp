@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/landing.css";
+import Footer from "./Footer";
 const Landing = () => {
   return (
     <div className="backLanding">
@@ -9,6 +10,7 @@ const Landing = () => {
           <button className="btnLanding">Home</button>
         </Link>
       </div>
+      <Footer/>
     </div>
   );
 };

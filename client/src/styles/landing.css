@@ -24,6 +24,7 @@
 .titleLanding {
   font-family: "BreackingBadFont";
   font-size: 4.5rem;
+  cursor: default;
 }
 
 .aLanding {
