@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "BreackingBadFont";
+  src: url("../asssets/font.otf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+}
+
 .backLanding {
   color: #fff;
   background-image: url("../asssets/3123.gif");
@@ -10,10 +17,19 @@
 .LandingPage {
   display: flex;
   position: relative;
-  top: 8rem;
+  top: 1rem;
   flex-direction: column;
 }
 
+.titleLanding {
+  font-family: "BreackingBadFont";
+  font-size: 4.5rem;
+}
+
+.aLanding {
+  position: relative;
+  top: -3rem;
+}
 .btnLanding {
   cursor: pointer;
   outline: 0;
@@ -23,17 +39,16 @@
   text-align: center;
   background-color: transparent;
   border: 3px solid transparent;
-  padding: 6px 12px;
+  padding: 6px 45px;
   font-size: 1rem;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   color: #fff;
-  border-color: #0D3E10;
-  
+  border-color: #0d3e10;
 }
-.btnLanding:hover{
+.btnLanding:hover {
   color: #fff;
   background-color: #093009;
-  border-color: #0D3E10;
+  border-color: #0d3e10;
 }
