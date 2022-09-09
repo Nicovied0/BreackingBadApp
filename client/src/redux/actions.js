@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const CHARACTERS = "CHARACTERS";
 // export const BYNAME = "BYNAME";
-// export const DETAILS = "DETAILS";
+export const DETAILS = "DETAILS";
 // export const STATUS = "STATUS";
 // export const BYCREATED = "BYCREATED";
 // export const ORDER = 'ORDER';
@@ -18,6 +18,7 @@ export function getCharacters() {
       }); 
   };
 };
+
 export function getOccupations() {
     return async function(dispatch) {
         const res = await axios.get('http://localhost:3001/occupations')
@@ -27,3 +28,18 @@ export function getOccupations() {
         });
     };
 };
+
+export function getDetails(id) {
+    return async function(dispatch) {
+        try {
+            const res = await axios.get(`http://localhost:3001/characters/${id}`);
+            return dispatch({
+                type: DETAILS,
+                payload: res.data
+            });
+        } catch (err) {
+            console.log(err)
+        };
+    };
+};
+

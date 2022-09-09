@@ -40,6 +40,9 @@
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
+.OndevLink:visited{
+  color: #fff;
+}
 
 .footer__reserved a:hover {
   color: #0d3e10;

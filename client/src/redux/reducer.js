@@ -1,10 +1,12 @@
 import { CHARACTERS } from "./actions";
 import { OCCUPATION } from "./actions";
+import { DETAILS } from "./actions";
 
 
 const initialState = {
     characters: [],
-    occupations: []
+    occupations: [],
+    details: []
 };
 
 function rootReducer(state = initialState, action) {
@@ -22,6 +24,11 @@ function rootReducer(state = initialState, action) {
                 occupations: action.payload
             
             }
+            case DETAILS:
+                return {
+                    ...state,
+                    details: action.payload
+                }
         default:
         return state;    
     };

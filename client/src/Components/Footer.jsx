@@ -11,7 +11,7 @@ const Footer = () => {
           <p>
          
             <strong>
-              <a target="_blank"> &copy; Copyright ONDev</a>
+              <a href="https://ondev.vercel.app/" rel="noreferrer" target="_blank" className="OndevLink"> &copy; Copyright ONDev</a>
             </strong>
           </p>
         </div>
@@ -19,18 +19,18 @@ const Footer = () => {
         <div class="footer__social">
           <ul className="footerUl">
             <li class="hero__social-icon">
-              <a href="https://github.com/Nicovied0" target="_blank">
-              <img src={GithubIcon}></img>
+              <a rel="noreferrer" href="https://github.com/Nicovied0" target="_blank">
+              <img alt="GithubIcon" src={GithubIcon}></img>
                 
               </a>
             </li>
 
             <li class="hero__social-icon">
               <a
-                href="https://www.linkedin.com/in/nicoboviedo/"
+                rel="noreferrer" href="https://www.linkedin.com/in/nicoboviedo/"
                 target="_blank"
               >
-                <img  src={LinkedinIcon}></img>
+                <img alt="LinkedinIcon"  src={LinkedinIcon}></img>
               </a>
             </li>
           </ul>
