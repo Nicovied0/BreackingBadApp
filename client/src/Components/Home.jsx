@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getCharacters } from "../redux/actions";
+import Loader from "./Loader";
 
 import Card from "./Card";
 
@@ -44,19 +45,22 @@ const Home = () => {
   // function handleCreated(e) {
   //     dispatch(byCreated(e.target.value))
   // }
-
-  return (
-    <div className="all">
-      <Link to="/character">Crear Personaje</Link>
-      <h1>Breaking Bad Characters App</h1>
-      <button
-        onClick={(e) => {
-          handleClick(e);
-        }}
-      >
-        Volver a cargar todos los personajes
-      </button>
-      {/* <div>
+  if (!allCharacters) {
+    return <h2>404</h2>;
+  } else if (allCharacters.length) {
+    
+    return (
+      <div className="all">
+        <Link to="/character">Crear Personaje</Link>
+        <h1>Breaking Bad Characters App</h1>
+        <button
+          onClick={(e) => {
+            handleClick(e);
+          }}
+        >
+          Volver a cargar todos los personajes
+        </button>
+        {/* <div>
                 <select onChange={e => handleStatus(e)}>
                     <option value='All'>All</option>
                     <option value='Alive'>Alive</option>
@@ -85,23 +89,26 @@ const Home = () => {
                 </div>
                 </div> */}
 
-      {allCharacters?.map((i) => {
-        return (
-          <div>
-            <Link to={"/details/" + i.id}>
-              <Card
-                name={i.name}
-                image={i.image}
-                nickName={i.nickName}
-                key={i.id}
-                id={i.id}
-              ></Card>
-            </Link>
-          </div>
-        );
-      })}
-    </div>
-  );
+        {allCharacters?.map((i) => {
+          return (
+            <div>
+              <Link to={"/details/" + i.id}>
+                <Card
+                  name={i.name}
+                  image={i.image}
+                  nickName={i.nickName}
+                  key={i.id}
+                  id={i.id}
+                ></Card>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+    );
+  } else {
+    return <Loader />;
+  }
 };
 
 export default Home;

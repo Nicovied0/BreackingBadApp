@@ -1,10 +1,10 @@
 import React from 'react'
-import image from '../assets/linkedinIcon.svg'
+import image from '../assets/loading.gif'
 
 
 const Loader = () => {
   return (
-    <div src={image} alt="" />
+    <img src={image} alt="" />
   )
 }
 
