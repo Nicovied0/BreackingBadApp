@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetails } from "../redux/actions";
+// import Loader from "./Loader";
 
 function Details(props) {
   const [loading, setLoading] = useState(false);
@@ -30,14 +31,16 @@ function Details(props) {
             <h4>{details.points}</h4>
             <h4>{details.birtday}</h4>
             <h4>Occupations</h4>
-            {details.occupation?.map((i) => (
+            {/* {
+            details.occupation?.map((i) => (
               <h5>{i}</h5>
-            ))}
+            ))} */}
           </div>
         </div>
       ) : (
-        <div>Loading</div>
+        <h2>cargando</h2>
       )}
+      
     </div>
   );
 }

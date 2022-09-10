@@ -1,13 +1,13 @@
 @font-face {
   font-family: "BreackingBadFont";
-  src: url("../asssets/font.otf") format("truetype");
+  src: url("../assets/font.otf") format("truetype");
   font-style: normal;
   font-weight: 800;
 }
 
 .backLanding {
   color: #fff;
-  background-image: url("../asssets/3123.gif");
+  background-image: url("../assets/3123.gif");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
