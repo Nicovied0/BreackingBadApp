@@ -10,17 +10,17 @@ export const OCCUPATION = "OCCUPATION";
 // export const POST = "POST";
 
 export function getCharacters() {
-  return async function(dispatch) {
-      const res = await axios.get('http://localhost:3001/characters')
-      return dispatch({
-          type: CHARACTERS,
-          payload: res.data
-      }); 
-  };
+    return async function (dispatch) {
+        const res = await axios.get('http://localhost:3001/characters')
+        return dispatch({
+            type: CHARACTERS,
+            payload: res.data
+        });
+    };
 };
 
 export function getOccupations() {
-    return async function(dispatch) {
+    return async function (dispatch) {
         const res = await axios.get('http://localhost:3001/occupations')
         return dispatch({
             type: OCCUPATION,
@@ -30,16 +30,12 @@ export function getOccupations() {
 };
 
 export function getDetails(id) {
-    return async function(dispatch) {
-        try {
-            const res = await axios.get(`http://localhost:3001/characters/${id}`);
-            return dispatch({
-                type: DETAILS,
-                payload: res.data
-            });
-        } catch (err) {
-            console.log(err)
-        };
+    return async function (dispatch) {
+        const res = await axios.get(`http://localhost:3001/characters/${id}`);
+        return dispatch({
+            type: DETAILS,
+            payload: res.data
+        });
     };
 };
 
