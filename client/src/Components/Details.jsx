@@ -13,18 +13,16 @@ function Details(props) {
     dispatch(getDetails(id));
   }, [id, dispatch]);
 
-if(!details){
-  return(
-    <h2>error</h2>
-  )
-}else if(details.length) {
-  return(
-    <Loader/>
-  )
-}else{
-  return (
-    <div className="detail">
-      
+  if (!details) {
+    // comprebo de tener el arreglo
+    return <h2>error</h2>;
+  } else if (details.length === 0 || details.id != id) {
+    // verifico que si el arreglo esta vacio o no concide el id pasado por params con el id de la card en el momento de renderizarce se ejecute el loader
+    return <Loader/>;
+  } else {
+    console.log(id);
+    return (
+      <div className="detail">
         <div>
           <h2 className="nameC">{details.name}</h2>
           <div className="allDetails">
@@ -40,16 +38,14 @@ if(!details){
             <h4>{details.birtday}</h4>
             <h4>Occupations</h4>
             {/* {
-            details.occupation?.map((i) => (
-              <h5>{i}</h5>
-            ))} */}
+          details.occupation?.map((i) => (
+            <h5>{i}</h5>
+          ))} */}
           </div>
         </div>
-     
-      
-    </div>
-  );
-} 
+      </div>
+    );
+  }
 }
 
 export default Details;
