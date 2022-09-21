@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getCharacters } from "../redux/actions";
 import Loader from "./Loader";
+import imgError from '../assets/pj_desc.jpg'
 
 import Card from "./Card";
 
@@ -41,15 +42,16 @@ const Home = () => {
   //     setCurrentPage(1);
   //     setOrder(`Ordenado ${e.target.value}`)
   // };
-
-  // function handleCreated(e) {
-  //     dispatch(byCreated(e.target.value))
-  // }
   
-  if (!allCharacters) {
-    return <h2>404</h2>;
-  } else if (allCharacters.length) {
+  // function handleCreated(e) {
+    //     dispatch(byCreated(e.target.value))
+    // }
     
+    if (!allCharacters) {
+      return <h2>404</h2>;
+    } else if (allCharacters.length) {
+      
+      console.log(allCharacters)
     return (
       <div className="all">
         <Link to="/character">Crear Personaje</Link>
@@ -91,17 +93,17 @@ const Home = () => {
                 </div> */}
 
         {allCharacters?.map((i) => {
-          console.log(allCharacters)
           return (
             <div>
               <Link to={"/details/" + i.id}>
                 <Card
                   name={i.name}
-                  image={i.image}
+                  image={i.image ? i.image : imgError}
                   nickName={i.nickName}
                   key={i.id}
                   id={i.id}
                   birtday={i.birtday}
+                  // occupation={i.occupation[0]} //occupation principal
                 ></Card>
               </Link>
             </div>
