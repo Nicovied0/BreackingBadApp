@@ -31,16 +31,15 @@ function Details(props) {
               src={details.image}
               alt="Not found"
             ></img>
-            <h5>{details.nickName}</h5>
-            <h3>status</h3>
+            <h4>Nickname: {details.nickName}</h4>
+            <h3>Status</h3> 
             <h4>{details.status}</h4>
-            <h4>{details.points}</h4>
-            <h4>{details.birtday}</h4>
-            <h4>Occupations</h4>
-            {/* {
+            <h4>Date of Birth: {details.birthday}</h4>
+            <h3>Occupations</h3>
+            {
           details.occupation?.map((i) => (
             <h5>{i}</h5>
-          ))} */}
+          ))}
           </div>
         </div>
       </div>

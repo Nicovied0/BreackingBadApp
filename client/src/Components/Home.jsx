@@ -45,6 +45,7 @@ const Home = () => {
   // function handleCreated(e) {
   //     dispatch(byCreated(e.target.value))
   // }
+  
   if (!allCharacters) {
     return <h2>404</h2>;
   } else if (allCharacters.length) {
@@ -90,6 +91,7 @@ const Home = () => {
                 </div> */}
 
         {allCharacters?.map((i) => {
+          console.log(allCharacters)
           return (
             <div>
               <Link to={"/details/" + i.id}>
@@ -99,6 +101,7 @@ const Home = () => {
                   nickName={i.nickName}
                   key={i.id}
                   id={i.id}
+                  birtday={i.birtday}
                 ></Card>
               </Link>
             </div>

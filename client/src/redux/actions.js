@@ -7,7 +7,7 @@ export const DETAILS = "DETAILS";
 // export const BYCREATED = "BYCREATED";
 // export const ORDER = 'ORDER';
 export const OCCUPATION = "OCCUPATION";
-// export const POST = "POST";
+export const POST = "POST";
 
 export function getCharacters() {
     return async function (dispatch) {
@@ -19,6 +19,7 @@ export function getCharacters() {
     };
 };
 
+//get ocupations to ruoute ocupations
 export function getOccupations() {
     return async function (dispatch) {
         const res = await axios.get('http://localhost:3001/occupations')
@@ -39,3 +40,12 @@ export function getDetails(id) {
     };
 };
 
+export function postCharacter(payload) {
+    return async function (dispatch) {
+        const res = await axios.post('http://localhost:3001/character', payload)
+        return {
+            type: POST,
+            res
+        }
+    };
+};
