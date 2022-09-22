@@ -13,14 +13,14 @@ function Details(props) {
     dispatch(getDetails(id));
   }, [id, dispatch]);
 
-  if (!details) {
-    // comprebo de tener el arreglo
-    return <h2>error</h2>;
-  } else if (details.length === 0 || details.id != id) {
-    // verifico que si el arreglo esta vacio o no concide el id pasado por params con el id de la card en el momento de renderizarce se ejecute el loader
-    return <Loader/>;
-  } else {
-    console.log(id);
+  // if (!details) {
+  //   // comprebo de tener el arreglo
+  //   return <h2>error</h2>;
+  // } else if (details.length === 0 || details.id != id) {
+  //   // verifico que si el arreglo esta vacio o no concide el id pasado por params con el id de la card en el momento de renderizarce se ejecute el loader
+  //   return <Loader/>;
+  // } else {
+  //   console.log(id);
     return (
       <div className="detail">
         <div>
@@ -45,6 +45,6 @@ function Details(props) {
       </div>
     );
   }
-}
+// }
 
 export default Details;
